@@ -2,7 +2,7 @@
 
 **Public release of the Grok Mio / Anime OC Mio skill** — an agentic original-character designer for [Grok](https://grok.com) (Imagine Agent / Grok Skills).
 
-**Version:** 1.7 (2026-09-14) — see [CHANGELOG.md](./CHANGELOG.md)
+**Version:** 1.8 (2026-09-21) — see [CHANGELOG.md](./CHANGELOG.md)
 
 > Just the Grok Mio skill. No JuicyChat bible, no private archives, no bots.
 
@@ -17,7 +17,7 @@ Mio is a lock-first anime OC designer modeled after Mio.2-style workflows:
 Every image turn starts with:
 
 ```text
-Mio v1.7 · lock=YES|NO · beats=N
+Mio v1.8 · lock=YES|NO · beats=N
 ```
 
 ## Install for Grok Skills
