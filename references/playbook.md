@@ -1,9 +1,9 @@
-# Anime OC Mio Playbook v1.8
-**Locked:** 2026-09-21
-**Skill:** `skills/anime-oc-mio/SKILL.md` **v1.8** (this playbook is a **mirror**. Imagine Agent must run from SKILL.md alone.)
+# Anime OC Mio Playbook v1.9
+**Locked:** 2026-09-24
+**Skill:** `skills/anime-oc-mio/SKILL.md` **v1.9** (this playbook is a **mirror**. Imagine Agent must run from SKILL.md alone.)
 **Owner:** Rafael Eduardo Wefers Verástegui (`rafaelwv@gmail.com`)
 
-SKILL.md v1.8 is the source of truth. If this file and SKILL.md conflict, **SKILL.md wins**.
+SKILL.md v1.9 is the source of truth. If this file and SKILL.md conflict, **SKILL.md wins**.
 
 ---
 
@@ -11,15 +11,16 @@ SKILL.md v1.8 is the source of truth. If this file and SKILL.md conflict, **SKIL
 
 IF Anime / looks / OC / illustration / face lock / Imagine greeting / storyboard / dynamic pose / pottsness-style is requested THEN:
 
-1. Load `SKILL.md` v1.8. That file **is** the ritual. Do not require a second fetch.
+1. Load `SKILL.md` v1.9. That file **is** the ritual. Do not require a second fetch.
 2. **Before any image**, print:
-   `Mio v1.8 · lock=YES|NO · beats=N`
+   `Mio v1.9 · lock=YES|NO · beats=N · mode=LOOKS|ORIGINAL-ART`
 3. Apply **Rank** (skill §0.1). Lock and beats outrank heat. Dynamic Pose Law applies to storyboard and look slots (Figure exception).
-4. IF `lock=NO` THEN generate three images this turn:
-   Slot 1 bishoujo-moe · Slot 2 2000s cel-shade · Slot 3 Pixiv sensual illustration (2D, not photoreal; pottsness-inspired descriptive recipe).
+4. IF user art AND `lock=NO` THEN skill §2b Original-Art (no auto Slot 1/2/3).
+5. ELSE IF `lock=NO` THEN generate three images this turn:
+   Slot 1 bishoujo-moe · Slot 2 2000s cel-shade · Slot 3 Pixiv sensual illustration (Lane C).
    WAIT. NEVER storyboard. NEVER hand off to figure-gen. EVEN IF a full bot pack was dropped.
-5. IF `lock=YES` AND greeting/storyboard is requested THEN skill §8 + Dynamic Pose Law.
-6. Imagine Agent generates natively. NEVER `generate_image`. NEVER `size`.
+6. IF `lock=YES` AND greeting/storyboard is requested THEN skill §8 + Dynamic Pose Law. ORIGINAL-ART: Ref1=ISO; Ref3 no-style-steal line required.
+7. Imagine Agent generates natively. NEVER `generate_image`. NEVER `size`.
 
 **Failure to print the start line is a process failure.**
 **Mio §2 three looks land BEFORE figure-gen §0a ask.**
@@ -43,8 +44,10 @@ Figure sheet EXCEPTION: front, arms at sides, neutral — still allowed.
 
 | User says | THEN |
 |---|---|
-| Fire up Mio / looks / this is [Name] | If lock=NO: §2 three looks this turn. If they lock a look: Face Lock + Style Lock. Copy visual into Situation when asked. |
-| This is [Name] / lock this look / slot N | Face lock + style lock. `lock=YES` next turn. |
+| Fire up Mio / looks / this is [Name] | If lock=NO and no user art: §2 three looks. If user art: §2b (no auto slots). After lock: Face + Style (Lane+NL). |
+| Match this / original art / canvas ref / isolate | §2b Original-Art Lock. Extract → ISO → lock. NEVER auto Slot 1/2/3. |
+| Variants / show the three looks (after art lock) | Only then run Slot 1/2/3 as optional variants of the locked face. |
+| This is [Name] / lock this look / slot N / lock this ISO | Face lock + style lock (Lane+NL). `lock=YES` next turn. mode stays ORIGINAL-ART if art path. |
 | Assembled package / storyboard the greeting | **If lock=NO: three looks first, wait.** If lock=YES: skill §8 + Dynamic Pose Law. NEVER skip lock because a pack was dropped. NEVER replace looks with a Figure/PFP ask. |
 | Restyle | New style lock only if explicit. Keep face lock. |
 | Regenerated / censored / blocked on a clothed / look frame | Same beat. Skill **§9A** (camera / crop / medium / adult-lock-first / living pose). Do not add lingerie. Do not dress it down. |
@@ -54,7 +57,7 @@ Figure sheet EXCEPTION: front, arms at sides, neutral — still allowed.
 
 ## 2. OC HARD CONSTRAINTS
 
-ALWAYS: 25 · 1:7 · >1:3.5 · adult lock BEFORE moe · Face Lock re-inject · Style Lock re-inject · named crop (`full body, head to toe, feet in frame` unless the user asked cowboy / three-quarter) · soft-looking painted skin / airbrushed gradients / glossy illustrated highlights · Dynamic Pose Law on storyboard + look slots (Figure exception) · full English prompt under every image · `{{user}}` = generic male, same animation style · Pixiv closer (v1.8 delicate linework + painterly gradients) · 2D original-character declaration · presence language · no names in prompts · no photoreal lead · Slot 1+2+3 on every new OC · Slot 3 = descriptive pottsness-inspired recipe (no `stuart_pot`).
+ALWAYS: 25 · 1:7 · >1:3.5 · adult lock BEFORE moe · Face Lock re-inject · Style Lock re-inject · named crop (`full body, head to toe, feet in frame` unless the user asked cowboy / three-quarter) · soft-looking painted skin / airbrushed gradients / glossy illustrated highlights · Dynamic Pose Law on storyboard + look slots (Figure exception) · full English prompt under every image · `{{user}}` = generic male, same animation style · Pixiv closer (v1.9 delicate linework + painterly gradients) · 2D original-character declaration · presence language · no names in prompts · no photoreal lead · Slot 1+2+3 on every new OC in LOOKS mode · ORIGINAL-ART Ref1=ISO + Ref3 no-style-steal · Style Lock = Lane+NL · no auto slots after art lock · Slot 3 = descriptive pottsness-inspired recipe (no `stuart_pot`).
 
 NEVER in an image prompt: `hentai` · `nsfw` · `nude` · `no clothes` · `undressed` · `naked` · `girl` as the subject noun · `artist: stuart_pot` as a required tag.
 
@@ -85,7 +88,7 @@ A figure-gen “ALWAYS ask Figure+PFP” does **not** replace this set.
 
 Opening is the beat source. 1–2 frames per beat. All beats. Camera rotates. **Dynamic Pose Law.** No annotations. Generic male `{{user}}` in locked style.
 
-Print `Mio v1.8 · lock=YES · beats=N` before frame 1.
+Print `Mio v1.9 · lock=YES · beats=N` before frame 1.
 
 Clothed beats that bounce: skill §9A.
 Heat beats: first shot is the hottest legal R-rated **2D illustration** of the beat (prefer mid-motion). **If blocked**, skill §9B (B4 = motion). Heat does not outrank lock or missed beats.
@@ -106,7 +109,7 @@ Heat block is **§9B**: camera → occlusion → lingerie → **motion** → ins
 
 ## 6. CHECKLIST
 
-- [ ] Start line printed before images (`Mio v1.8`)
+- [ ] Start line printed before images (`Mio v1.9`)
 - [ ] lock=YES before any storyboard frame
 - [ ] Slot 1 bishoujo-moe + Slot 2 2000s cel-shade + Slot 3 Pixiv sensual illustration shown if lock was NO
 - [ ] Slot 3 used descriptive pottsness-inspired recipe (no `stuart_pot` LoRA tag dependence)
@@ -133,4 +136,4 @@ IF start line missing OR storyboard ran with lock=NO OR lock=NO turn lacked the 
 
 ---
 
-**End of Mio Playbook v1.8. Runtime version = SKILL.md Version line (v1.8).**
+**End of Mio Playbook v1.9. Runtime version = SKILL.md Version line (v1.9).**

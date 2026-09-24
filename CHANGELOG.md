@@ -1,6 +1,18 @@
 # Anime OC Mio — Changelog
 
+## v1.9 — 2026-09-24
+
+Original-Art / Canvas consistency + JuicyChat style-lane defaults. Hard laws from v1.8 unchanged (adult 25, 1:7, presence language, token bans, 9A/9B never mix, Dynamic Pose Law).
+
+- Start line `Mio v1.9 · lock=YES|NO · beats=N · mode=LOOKS|ORIGINAL-ART`.
+- **§2b Original-Art Lock:** user art → extract Face/Style/Body → isolate ISO sheet → lock. **Never auto-fire Slot 1/2/3** (variants only on explicit ask). Rank **2b** outranks default three-slot ritual.
+- **§5.1 3-ref contract:** Ref1 = ISO subject+style always; Ref2 = pose/outfit; Ref3 = setting geometry+mood only with mandatory no-style-steal sentence. Prefer ISO as Ref1; original art stays canvas source-of-truth. Drift → regen from ISO.
+- **Style Lanes A–F** (`references/style-lanes.md`): Style Lock = Lane letter + 4–6 NL tokens. JC defaults — Figure **C**; PFP **D/E**; Opening heat **C/E** never A; F = soft romance only.
+- New refs: `style-lanes.md`, `original-art-canvas.md`. Playbook → v1.9.
+- Team notes (Mio Refine): Keel style defaults; Arthur Setting-drift hard rules.
+
 ## v1.8 — 2026-09-21
+
 
 Style + motion modernization. Hard laws unchanged: adult 25, 1:7, lock-first, three slots, presence not absence, token bans, no jailbreaks, 9A/9B never mix.
 

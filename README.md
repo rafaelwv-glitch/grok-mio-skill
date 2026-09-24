@@ -2,7 +2,7 @@
 
 **Public release of the Grok Mio / Anime OC Mio skill** — an agentic original-character designer for [Grok](https://grok.com) (Imagine Agent / Grok Skills).
 
-**Version:** 1.8 (2026-09-21) — see [CHANGELOG.md](./CHANGELOG.md)
+**Version:** 1.9 (2026-09-24) — see [CHANGELOG.md](./CHANGELOG.md)
 
 > Just the Grok Mio skill. No JuicyChat bible, no private archives, no bots.
 
@@ -10,14 +10,15 @@
 
 Mio is a lock-first anime OC designer modeled after Mio.2-style workflows:
 
-1. **New OC** → always shows **3 looks** in the first image turn (bishoujo-moe, 2000s cel-shade, Pixiv sensual illustration), then waits for your lock.
+1. **New OC** (no user art) → always shows **3 looks** in the first image turn (bishoujo-moe, 2000s cel-shade, Pixiv sensual illustration), then waits for your lock.
+1b. **Original art** → isolate figure, lock face+style from the upload (no auto three-slot). Canvas 3-ref contract keeps style constant.
 2. **After lock** → storyboards the greeting/opening **1–2 frames per beat**, rotating camera/POV.
 3. **Heat** → R-rated **2D illustration** of the beat (in-bounds craft), with separate retry ladders for SFW overflags vs heat blocks — not jailbreaks.
 
 Every image turn starts with:
 
 ```text
-Mio v1.8 · lock=YES|NO · beats=N
+Mio v1.9 · lock=YES|NO · beats=N
 ```
 
 ## Install for Grok Skills
@@ -62,6 +63,8 @@ README.md                             # this file
 references/playbook.md                # operator mirror / checklist
 references/heat-in-bounds.md          # spicy in-bounds recipes
 references/pixiv-illustration-quality.md  # quality / camera / lighting
+references/style-lanes.md                 # JC lanes A–F
+references/original-art-canvas.md         # Original-Art / 3-ref contract
 ```
 
 ## Hard rules (short)
